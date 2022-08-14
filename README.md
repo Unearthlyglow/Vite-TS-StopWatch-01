@@ -1,8 +1,9 @@
 # Project:
-**Tech Stack**: HTML, CSS, SCSS, JS
+**Tech Stack**: HTML, CSS, SCSS, JS, TS
 
 ## Objective:
-> Creating a stop watch 
+> Create a Stop Watch.
+
 >
 
 ## How to Deploy:
