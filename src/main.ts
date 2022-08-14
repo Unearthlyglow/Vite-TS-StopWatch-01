@@ -1,28 +1,62 @@
-import './style.css'
-import typescriptLogo from './typescript.svg'
-import { setupCounter } from './counter'
+import "../src/Sass/main.scss";
 
-document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
-  <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://www.typescriptlang.org/" target="_blank">
-      <img src="${typescriptLogo}" class="logo vanilla" alt="TypeScript logo" />
-    </a>
-    <h1>Vite + TypeScript</h1>
-    <div class="card">
-      <button id="counter" type="button"></button>
-    </div>
-    <p class="read-the-docs">
-      Click on the Vite and TypeScript logos to learn more
-    </p>
+document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
+  <div class="header">
+    <h1>Stop Watch</h1>
+    <h2> Vanilla + <span>Vite<span> </h2>
+</div>
+  
+<div id="watch">00:00:00</div>
+  <div class="Button_container"> 
+  <button id="button-start">Start</button>
+  <button id="button-stop">Stop</button>
+  <button id="button-reset">Reset</button>
   </div>
-`
-
-setupCounter(document.querySelector<HTMLButtonElement>('#counter')!)
 
 
-git remote add origin https://github.com/Unearthlyglow/StopWatch.git
-git branch -M main
-git push -u origin main
+`;
+
+//BREAK Variables:
+const time_el = document.getElementById("watch");
+const buttonStart = document.getElementById("button-start");
+const buttonStop = document.getElementById("button-stop");
+const buttonReset = document.getElementById("button-reset");
+let seconds = 0;
+let interval: number | null | undefined = null;
+
+//BREAK Event Listeners:
+buttonStart!.addEventListener("click", start);
+buttonStop!.addEventListener("click", stop);
+buttonReset!.addEventListener("click", reset);
+
+function timer() {
+  seconds++;
+
+  let hrs = Math.floor(seconds / 3600);
+  let mins = Math.floor((seconds - hrs * 3600) / 60);
+  let secs = seconds % 60;
+
+  if (secs < 10) secs = "0" + secs;
+  if (mins < 10) mins = "0" + mins;
+  if (hrs < 10) hrs = "0" + hrs;
+
+  time_el.innerText = `${hrs}:${mins}:${secs}`;
+}
+
+function start() {
+  if (interval) {
+    return;
+  }
+  interval = setInterval(timer, 1000);
+}
+
+function stop() {
+  clearInterval(interval);
+  interval = null;
+}
+
+function reset() {
+  stop();
+  seconds = 0;
+  time_el.innerText = "00:00:00";
+}

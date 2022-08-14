@@ -1,0 +1,20 @@
+1. Need to go over a couple of starting from scratch Git Exercises.
+
+3. Refactor/Move CSS Grid notes and make sure html {
+          font-size: 62.5% 10px/16px = 62.5% = 1rem = 10px
+        }
+ is added correctly. 
+
+4. Can I nest a pseudo selector within another it's parent selector?
+
+5. Go over JS file and break it down with notes, line by line(as needed)
+
+Remainder (%)modulo: 
+The remainder operator (%) returns the remainder left over when one operand is divided by a second operand. It always takes the sign of the dividend.
+
+console.log(13 % 5);
+// expected output: 3
+
+5 goes into 13 TWICE which = 10, 3 is LEFT OVER. 
+
+15 % 2

@@ -1,0 +1,57 @@
+html {
+  font-size: 62.5%;
+  //10px/16px = 62.5% = 1rem = 10px
+  border: 1rem solid yellow;
+}
+
+body {
+  background: linear-gradient(to right, #2193b0, #6dd5ed);
+  
+}
+
+.header {
+  color: white;
+  text-align: center;
+  font-size: 4rem;
+}
+
+#watch {
+  color: rgb(196, 186, 53);
+  font-size: 9rem;
+  text-align: center;
+  margin: 4rem;
+}
+
+button {
+  background-color: rgb(198, 198, 222);
+  border: 0.123rem solid;
+  border-radius: 1.5rem;
+  border-color: rgba(9, 28, 243, 0.295);
+  width: 10em;
+  height: 4em;
+  font-size: 2.5em;
+  margin-left: 2rem;
+}
+
+button:hover {
+  background: rgb(231, 201, 67);
+}
+.Button_container {
+  text-align: center;
+}
+
+#seconds {
+  color: blue;
+}
+
+#minutes {
+  color: red;
+}
+
+#tenMinutes {
+  color: yellow;
+}
+
+// .Paragraph_container {
+//   text-align: center;
+// }
